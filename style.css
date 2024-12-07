@@ -1,0 +1,263 @@
+.hero {
+    background: url(img/Black\ and\ Yellow\ Modern\ Food\ Presentation.png);
+    height: 115vh;
+    background-position:center;
+    background-size:100%;
+    overflow: hidden;
+    
+  }
+  
+  .navbar-brand{
+
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.5em;
+
+  }
+
+
+#about{
+ background-image: url(img/Brown\ Organic\ Burn.png);
+ height: 100vh;
+ background-position:center;
+ background-size:cover;
+ margin-top: 30px;
+ padding: auto;
+ 
+
+}
+
+  #bd{
+    background-image: url(img/Brown\ Organic\ Burger\ Presentation.png);
+    height: 100vh;
+    background-position:center;
+    background-size:cover;
+    
+
+  }
+
+  #fom{
+   background-color: #ffae0089;
+   color: black;
+
+  }
+  
+ .btn1{
+   color: rgb(5, 5, 5);
+   background-color: rgb(75, 29, 6);
+
+ }
+
+
+  .card img {
+    height: 150px;
+    object-fit: cover;
+    
+  }
+
+  
+
+  #branch{
+
+    width:800px ;
+    height: 70px;
+
+/*-----------------------------------menus1---------------------------------*/
+
+  }
+  #menuse1 {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem; /* Space between cards */
+    padding: 1rem;
+    scroll-behavior: smooth; /* Optional: smooth scrolling */
+  }
+
+  .card {
+    flex: 0 0 400px;
+    background-color: rgba(41, 47, 47, 0.574);
+    color: #e9eae8;
+    border-inline-width: 10px;
+    border-radius: 5%;
+    
+  }
+
+  #menuse1::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  #menuse1::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+
+  #menuse1::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+
+/*-----------------------------------menus2---------------------------------*/
+
+
+#menuse2 {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem; /* Space between cards */
+  padding: 1rem;
+  scroll-behavior: smooth; /* Optional: smooth scrolling */
+}
+
+.card {
+  flex: 0 0 300px; /* Width of each card */
+}
+
+#menuse2::-webkit-scrollbar {
+  height: 8px;
+}
+
+#menuse2::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+#menuse2::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+
+/*-----------------------------------menus3---------------------------------*/
+
+
+#menuse3 {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem; /* Space between cards */
+  padding: 1rem;
+  scroll-behavior: smooth; /* Optional: smooth scrolling */
+}
+
+.card {
+  flex: 0 0 300px; /* Width of each card */
+}
+
+#menuse3::-webkit-scrollbar {
+  height: 8px;
+}
+
+#menuse3::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+#menuse3::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+
+
+/*-----------------------------------menus4---------------------------------*/
+
+
+#menuse4 {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem; /* Space between cards */
+  padding: 1rem;
+  scroll-behavior: smooth; /* Optional: smooth scrolling */
+}
+
+.card {
+  flex: 0 0 300px; /* Width of each card */
+}
+
+#menuse4::-webkit-scrollbar {
+  height: 8px;
+}
+
+#menuse4::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+#menuse4::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/*-----------------------------------menus5---------------------------------*/
+
+
+#menuse5 {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem; /* Space between cards */
+  padding: 1rem;
+  scroll-behavior: smooth; /* Optional: smooth scrolling */
+}
+
+.card {
+  flex: 0 0 300px; /* Width of each card */
+}
+
+#menuse5::-webkit-scrollbar {
+  height: 8px;
+}
+
+#menuse5::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+#menuse5::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+
+/*-----------------------------------menus6---------------------------------*/
+
+
+#menuse6 {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem; /* Space between cards */
+  padding: 1rem;
+  scroll-behavior: smooth; /* Optional: smooth scrolling */
+}
+
+.card {
+  flex: 0 0 300px; /* Width of each card */
+}
+
+#menuse6::-webkit-scrollbar {
+  height: 8px;
+}
+
+#menuse6::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+#menuse6::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+
+#set{
+
+background-image: url(img/brown-wooden-textured-flooring-background.jpg);
+
+}
+
+.title{
+
+font-family: 'Courier New', Courier, monospace; 
+text-align: center;
+color: #000000;
+background-color: #efb509b4;
+border-radius: 20px;
+height: 35px;
+font-size: 1.5em;
+font-weight: bold;
+padding: 4px;
+
+
+}
+
