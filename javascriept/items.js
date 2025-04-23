@@ -11,7 +11,7 @@ async function fetchMenuItems() {
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
         const data = await response.json();
-        console.log("Fetched Menu Items:", data); // Debugging log
+      // Debugging log
 
         menuItems = data.reduce((acc, item) => {
             if (!acc[item.category]) acc[item.category] = [];
@@ -25,26 +25,42 @@ async function fetchMenuItems() {
     }
 }
 
-// Render menu items in the table
 function renderItemsTable() {
     const itemTable = document.getElementById("item-table");
-    itemTable.innerHTML = "";
+
+    // Check if itemTable exists in the DOM
+    if (!itemTable) {
+        console.error("Element with id 'item-table' not found!");
+        return;
+    }
+
+    itemTable.innerHTML = ""; // Clear previous content
 
     Object.entries(menuItems).forEach(([category, items]) => {
         items.forEach(item => {
             const row = document.createElement("tr");
+
+            // Sanity check to avoid breaking on undefined values
+            const itemCode = item.itemCode || "";
+            const itemName = item.itemName || "";
+            const price = item.price != null ? parseFloat(item.price).toFixed(2) : "0.00";
+            const discount = item.discount != null ? `${item.discount}%` : "0%";
+            const imageUrl = item.img || "";
+            const categoryName = item.category || "";
+
             row.innerHTML = `
-                <td>${item.itemCode}</td>
-                <td>${item.itemName}</td>
-                <td>${item.category}</td>
-                <td>$${item.price.toFixed(2)}</td>
-                <td>${item.discount}%</td>
-                <td><img src="${item.img}" width="50"></td>
+                <td>${itemCode}</td>
+                <td>${itemName}</td>
+                <td>${categoryName}</td>
+                <td>$${price}</td>
+                <td>${discount}</td>
+                <td><img src="${imageUrl}" width="50" onerror="this.onerror=null;this.src='https://via.placeholder.com/50';"></td>
                 <td>
-                    <button class="btn btn-warning btn-sm" onclick="populateUpdateForm('${item.itemCode}')">Edit</button>
-                    <button class="btn btn-danger btn-sm" onclick="deleteMenuItem('${item.itemCode}')">Delete</button>
+                    <button class="btn btn-warning btn-sm" onclick="populateUpdateForm('${itemCode}')">Edit</button>
+                    <button class="btn btn-danger btn-sm" onclick="deleteMenuItem('${itemCode}')">Delete</button>
                 </td>
             `;
+
             itemTable.appendChild(row);
         });
     });
@@ -53,15 +69,22 @@ function renderItemsTable() {
 // Populate update form with item details (Fixed API call)
 async function populateUpdateForm(itemCode) {
     try {
-        const response = await fetch(`${apiBaseUrl}/search/${itemCode}`);
+        const response = await fetch(`${apiBaseUrl}/searchByItemCode/${itemCode}`);
         if (!response.ok) throw new Error("Failed to fetch item details");
 
-        const item = await response.json();
-        
+        const items = await response.json();
+
+        if (!items || items.length === 0) {
+            alert("Item not found!");
+            return;
+        }
+
+        const item = items[0]; // Your backend returns a List<MenuItem>, so pick first item
+
         document.getElementById("modalTitle").textContent = "Update Item";
         document.getElementById("category").value = item.category;
         document.getElementById("itemCode").value = item.itemCode;
-        document.getElementById("itemCode").disabled = true; // Disable itemCode when editing
+        document.getElementById("itemCode").disabled = true;
         document.getElementById("itemName").value = item.itemName;
         document.getElementById("price").value = item.price;
         document.getElementById("discount").value = item.discount;
@@ -73,7 +96,6 @@ async function populateUpdateForm(itemCode) {
         isEditing = true;
         editingItemCode = itemCode;
 
-        // Open modal
         const updateModal = new bootstrap.Modal(document.getElementById("addItemModal"));
         updateModal.show();
 
@@ -81,6 +103,7 @@ async function populateUpdateForm(itemCode) {
         console.error("Error fetching item details:", error);
     }
 }
+
 
 // Handle add/update menu item
 document.getElementById("item-form").addEventListener("submit", async function (e) {
@@ -126,10 +149,14 @@ document.getElementById("item-form").addEventListener("submit", async function (
 
         alert(`Item ${isEditing ? "updated" : "added"} successfully!`);
         fetchMenuItems();
-        resetForm();
+        
 
         // Close modal after save
-        document.querySelector('[data-bs-dismiss="modal"]').click();
+        const modal = bootstrap.Modal.getInstance(document.getElementById("addItemModal"));
+        if (modal) {
+            modal.hide();
+        }
+        resetForm(); // Reset form fields after saving
         
     } catch (error) {
         console.error("Error:", error);
@@ -139,28 +166,38 @@ document.getElementById("item-form").addEventListener("submit", async function (
 
 // Delete a menu item
 async function deleteMenuItem(itemCode) {
-    if (!confirm("Are you sure you want to delete this item?")) return;
+console.log("Deleting item with code:", itemCode); // Debugging log
 
+    if (!confirm("Are you sure you want to delete this item?")) {
+        return; // User canceled the deletion
+    }
+  
     try {
-        console.log(`Attempting to delete item: ${itemCode}`); // Debugging log
+        const url = `${apiBaseUrl}/delete/${itemCode}`; // <- Adjust this based on your actual API
+        console.log("Deleting from:", url);
 
-        const response = await fetch(`${apiBaseUrl}/delete/${itemCode}`, {
+        const response = await fetch(url, {
             method: "DELETE",
             headers: { "Content-Type": "application/json" }
         });
 
         if (!response.ok) {
-            const errorMessage = await response.text();
-            throw new Error(`Failed to delete: ${errorMessage}`);
+            const errorText = await response.text();
+            throw new Error(`Server error: ${errorText}`);
         }
 
         alert("Item deleted successfully!");
-        fetchMenuItems(); // Refresh the menu items list
+        fetchMenuItems(); // Refresh the menu
     } catch (error) {
         console.error("Error deleting item:", error);
-        alert("An error occurred while deleting the item.");
+        alert("Error deleting item: " + error.message);
     }
+
+
+
 }
+
+
 
 // Handle image preview for URL input
 document.getElementById("img").addEventListener("input", function () {

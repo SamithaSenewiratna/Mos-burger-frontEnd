@@ -60,10 +60,17 @@ async function addCustomer(customer) {
             body: JSON.stringify(customer)
         });
 
-        alert("Customer added successfully!");
+        
         document.getElementById("customer-form").reset();
         fetchCustomers(); 
         closeModal();
+
+        const modal = bootstrap.Modal.getInstance(document.getElementById("addCustomerModal"));
+        if (modal) {
+            modal.hide();
+        }
+         
+
     } catch (error) {
         console.error("Error adding customer:", error);
     }

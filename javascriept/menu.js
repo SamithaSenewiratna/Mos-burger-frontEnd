@@ -156,7 +156,6 @@ function updateCart() {
                     <p>Qty: ${item.quantity} | Price: $${item.price.toFixed(2)}</p>
                 </div>
                 <div>
-                    
                     <button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">Remove</button>
                 </div>
             </div>`;

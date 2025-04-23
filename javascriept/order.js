@@ -27,7 +27,7 @@ function renderOrders(orders) {
             : "No Items";
 
         row.innerHTML = `
-            <td>${order.id ?? "N/A"}</td>
+            <td>${"ODR00"+order.id ?? "N/A"}</td>
             <td>Customer ID: ${order.customerId ?? "N/A"}</td>
             <td>${order.date ?? "N/A"}</td>
             <td>${order.time ?? "N/A"}</td>
