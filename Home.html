@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOS Burgers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+<link rel="stylesheet" href="CssFiles/Home.css">
+</head>
+<body>
+
+<!-- Font Awesome CDN -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+<!--  Sidebar Navigation -->
+<nav class="sidebar text-white">
+    <h4 class="text-center">Mos Burgers</h4>
+    <img id="nav-icon" src="img/ai-generated-8123682_1280.png" alt="">
+    <ul class="nav flex-column text-center ">
+     
+        <li class="nav-item">
+            <a class="nav-link" href="Home.html">
+                <i class="fas fa-home"></i> Home
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="menu.html">
+                <i class="fas fa-utensils"></i> Menu
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="items.html">
+                <i class="fas fa-box"></i> Items
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="customers.html">
+                <i class="fas fa-users"></i> Customers
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="orders.html" id="nav-view-orders">
+                <i class="fas fa-receipt"></i> View Orders
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="reports.html">
+                <i class="fas fa-chart-bar"></i> Reports
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" onclick="confirmLogout()">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Logout  Modal -->
+<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="logoutModalLabel">Logout Confirmation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                Are you sure you want to logout?
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" onclick="logoutUser()">Logout</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function confirmLogout() {
+        var logoutModal = new bootstrap.Modal(document.getElementById('logoutModal'));
+        logoutModal.show();
+    }
+
+    function logoutUser() {
+        window.location.href = 'logInpage.html';
+    }
+</script>
+
+
+
+<div class="container-fluid d-flex align-items-center justify-content-center vh-100">
+    <div id="head-text " class="row w-75">
+        <!-- Left Content -->
+        <div class="col-md-6 d-flex flex-column justify-content-center text-white">
+            <h1 class="brand-title">MOS BURGERS</h1>
+            <p class="brand-description">
+                Satisfy your cravings with our delicious, freshly made burgers, packed with flavor and crafted with love.
+                Whether you're a classic cheeseburger fan or craving something unique, we've got the perfect bite for you.
+                Swing by and experience the ultimate burger bliss!
+            </p>
+            <a href="#" class="btn btn-warning btn-lg rounded-pill px-4">Get Started</a>
+            <p class="mt-4 website-link">www.mosburgers.com</p>
+        </div>
+
+        <!-- Right Content  -->
+        <div class="col-md-6 d-flex justify-content-center">
+            <div class="image-container">
+                <img id="mainImg" src="img/delicious-burger-indoors.jpg" alt="MOS Burger" class="img-fluid rounded-image">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+ <!-- special details   -->
+   <h2 class="text-center mb-4 p-5 ">Here are four special burger item </h2>
+
+
+
+
+ <!-- no 1  -->
+
+<div class="container-fluid d-flex  p-4">
+    <div id="head-text " class="row w-75">
+        
+             <!-- Left Content -->
+    
+        <div class="col-md-6 d-flex justify-content-center">
+            <div class="image-container">
+                <img id="secondImg" src="img/big-cheeseburger-french-fries.jpg" alt="MOS Burger" class="img-fluid rounded-image">
+            </div>
+        </div>
+     </div>
+
+            <!-- Right Content  -->
+     <div class="col-md-6 d-flex flex-column justify-content-center text-white">
+        <h3 class="second-title ">🍔 Ultimate Cheese Blast</h3>
+        <p class="topic-description">
+            A juicy, double-stacked beef patty loaded with melted cheddar, mozzarella, and a creamy cheese sauce, topped with crisp lettuce, fresh tomatoes, and our signature burger sauce. Cheese lovers, this one’s for you!
+        </p>
+      
+       
+    </div>
+</div>
+
+ <!-- no 2  -->
+
+ <div class="container-fluid d-flex p-4">
+    <div id="head-text " class="row w-75">
+        
+             <!-- Left Content -->
+    
+        <div class="col-md-6 d-flex justify-content-center">
+            <div class="image-container">
+                <img id="secondImg" src="img/ai-generated-8271284_1280.jpg" alt="MOS Burger" class="img-fluid rounded-image">
+            </div>
+        </div>
+     </div>
+
+            <!-- Right Content  -->
+     <div class="col-md-6 d-flex flex-column justify-content-center text-white">
+        <h3 class="second-title">🌶️ Fiery BBQ Crunch</h3>
+        <p class="topic-description">
+            Spice up your day with our crispy chicken burger coated in smoky BBQ sauce and a kick of jalapeños, balanced with fresh veggies and a crunchy onion ring for that perfect bite.
+        </p>
+      
+       
+    </div>
+</div>
+
+<!-- no 3  -->
+
+
+<div class="container-fluid d-flex p-4">
+    <div id="head-text " class="row w-75">
+        
+             <!-- Left Content -->
+    
+        <div class="col-md-6 d-flex justify-content-center">
+            <div class="image-container">
+                <img id="secondImg" src="img/burger-7422970_1280.jpg" alt="MOS Burger" class="img-fluid rounded-image">
+            </div>
+        </div>
+     </div>
+
+            <!-- Right Content  -->
+     <div class="col-md-6 d-flex flex-column justify-content-center text-white">
+        <h3 class="second-title">🥓 Smoky Bacon Deluxe</h3>
+        <p class="topic-description">
+            Savor the goodness of a flame-grilled beef patty, topped with crispy bacon strips, melted Swiss cheese, caramelized onions, and a hint of smoky BBQ sauce on a toasted brioche bun.
+
+
+        </p>
+      
+       
+    </div>
+</div>
+
+
+<!-- no 4  -->
+
+<div class="container-fluid d-flex p-4">
+    <div id="head-text " class="row w-75">
+        
+             <!-- Left Content -->
+    
+        <div class="col-md-6 d-flex justify-content-center">
+            <div class="image-container">
+                <img id="secondImg" src="img/front-view-tasty-meat-burger-with-cheese-salad-dark-background.jpg" alt="MOS Burger" class="img-fluid rounded-image">
+            </div>
+        </div>
+     </div>
+
+            <!-- Right Content  -->
+     <div class="col-md-6 d-flex flex-column justify-content-center text-white">
+        <h3 class="second-title">🥑 Avocado Veggie Treat</h3>
+        <p class="topic-description">
+            A hearty veggie patty paired with creamy avocado slices, crisp lettuce, juicy tomatoes, and a zesty herb mayo – a fresh and flavorful choice for veggie lovers.
+
+
+        </p>
+      
+       
+    </div>
+
+    
+</div>
+
+
+<h2 class="text-center mb-4 p-5">  What Makes Us Special!</h2>
+
+<!--carasol -->
+
+<div id="carouselExampleDark" class="carousel carousel-dark slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img src="img/colombo shop.png" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block ">
+          <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="img/istockphoto-1174650335-1024x1024-transformed.jpeg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Some representative placeholder content for the second slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/istockphoto-1371431471-1024x1024-transformed.jpeg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Contact Us</h2>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-warning w-100">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<div  id="footer">
+<!-- Footer -->
+<div   class="bg-dark text-center text-white py-3 container">
+    <p>&copy; 2024 MOS Burgers. All rights reserved.</p>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

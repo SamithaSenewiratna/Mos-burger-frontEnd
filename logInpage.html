@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CssFiles/loginPage.css">
+</head>
+
+<body>
+    <div id="fom">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-xl-9">
+                    <div class="card" style="border-radius: 1rem;">
+                        <div class="row g-0">
+                            <div class="col-md-6 col-lg-5 d-md-block">
+                                <img src="img/burger9_01.jpg" alt="login form" class="img-fluid h-100" style="border-radius: 1rem 0 0 1rem;" />
+                            </div>
+                            <div class="col-md-5 col-lg-7 d-flex align-items-center">
+                                <div class="card-body p-4 p-lg-5 text-black">
+
+                                    <form>
+
+                                        <div class="d-flex align-items-center mb-3 pb-1">
+                                            <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                                            <span class="h1 fw-bold mb-0">Mos Burgers</span>
+                                        </div>
+
+                                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+
+                                        <div class="form-outline mb-4">
+                                            <input type="email" id="txtEmailForLog" class="form-control form-control-lg" />
+                                            <label class="form-label" for="txtEmailForLog">Email address</label>
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <input type="password" id="txtPasswordForLog" class="form-control form-control-lg" />
+                                            <label class="form-label" for="txtPasswordForLog">Password</label>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <button class="btn btn-dark btn-lg btn-block" type="button" onclick="log()">Login</button>
+                                        </div>
+
+                                        <a class="small text-muted" href="#">Forgot password?</a>
+                                        <p class="mb-5 pb-lg-2" onclick="showRegister()" style="color: #fbc505; cursor: pointer;">Don't have an account? <a href="#" style="color: #fb7805; text-decoration: underline;">Register here</a></p>
+
+                                        <a href="#" class="small text-muted">Terms of use.</a>
+                                        <a href="#" class="small text-muted">Privacy policy</a>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="registerForm" style="display: none;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-xl-9">
+                    <div class="card" style="border-radius: 1rem;">
+                        <div class="row g-0">
+                            <div class="col-md-6 col-lg-5 d-md-block">
+                                <img src="img/burger9_01.jpg" alt="register form" class="img-fluid h-100" style="border-radius: 1rem 0 0 1rem;" />
+                            </div>
+                            <div class="col-md-5 col-lg-7 d-flex align-items-center">
+                                <div class="card-body p-4 p-lg-5 text-black">
+
+                                    <form>
+
+                                        <div class="d-flex align-items-center mb-3 pb-1">
+                                            <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                                            <span class="h1 fw-bold mb-0">Mos Burgers</span>
+                                        </div>
+
+                                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Register</h5>
+
+                                        <div class="form-outline mb-4">
+                                            <input type="text" id="txtName" class="form-control form-control-lg" />
+                                            <label class="form-label" for="txtName">Name</label>
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <input type="email" id="txtEmail" class="form-control form-control-lg" />
+                                            <label class="form-label" for="txtEmail">Email address</label>
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <input type="password" id="txtPassword" class="form-control form-control-lg" />
+                                            <label class="form-label" for="txtPassword">Password</label>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <button class="btn btn-dark btn-lg btn-block" type="button" onclick="register()">Register</button>
+                                        </div>
+
+                                        <p class="mb-5 pb-lg-2" onclick="showSignIn()" style="color: #fbc505; cursor: pointer;">Already have an account? <a href="#" style="color: #fb7805; text-decoration: underline;">Back to Login</a></p>
+
+                                        <a href="#" class="small text-muted">Terms of use.</a>
+                                        <a href="#" class="small text-muted">Privacy policy</a>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showRegister() {
+            document.getElementById('fom').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'block';
+        }
+
+        function showSignIn() {
+            document.getElementById('registerForm').style.display = 'none';
+            document.getElementById('fom').style.display = 'block';
+        }
+
+        function log() {
+            alert("Logging in...");
+          
+        }
+
+        function register() {
+            alert("Registering...");
+           
+        }
+    </script>
+
+
+<script>
+
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="javascriept/login.js"></script>
+</body>
+
+</html>

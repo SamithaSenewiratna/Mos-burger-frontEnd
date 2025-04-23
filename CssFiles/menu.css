@@ -1,0 +1,357 @@
+
+:root {
+  --primary-color: #e74c3c;
+  --secondary-color: #e4ef18;
+  --bg-sidebar: #f8f9fa;
+  --bg-orders: #ffffff;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --card-hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  --transition-duration: 0.3s;
+  --card-width: 300px;       /* Adjust card width here */
+  --card-image-height: 200px; /* Adjust image container height here */
+}
+
+
+
+
+
+body {
+  background: linear-gradient(to right, #000000bb, #0b0101);
+
+
+  color: rgb(237, 230, 230);
+  margin-left: 260px;
+  margin-right:  310px;
+}
+
+
+#main{
+
+
+ background: #13849600;
+/* background-image: url(); */
+background-size: cover; 
+
+
+}
+
+
+
+.sidebar {
+  width: 250px;
+  position: fixed;
+  height: 100vh;
+  
+background-image: url(../img/navbar\ black.png);
+background-size: cover;
+
+  padding: 20px;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+.sidebar .nav-link {
+  padding: 20px;
+  color: white;
+  transition: background 0.3s ease;
+  text-align: center;
+}
+
+.sidebar .nav-link:hover {
+  background: #FFC107;
+  color: black;
+  border-radius: 5px;
+  text-align: center;
+  
+}
+
+
+
+#nav-icon{
+
+  top:-20px;
+width: 100px;
+margin-top: -100px;
+padding-top:10px ;
+padding-bottom: 20px;
+
+
+
+}
+
+.sidebar {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+
+
+}
+.nav.flex-column {
+width: 100%;
+}
+.modal-dialog-centered {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.sidebar h4 {
+position: absolute;
+top: 20px;
+right:0px;  /* Move it 50% from the left edge */
+transform: translateX(-50%); /* Center it exactly */
+}
+
+
+
+
+
+/* ------------------ Menu Container & Section ------------------ */
+.menu-container {
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+ 
+
+
+}
+
+.menu-section h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* Grid layout for items */
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* ------------------ Card Design ------------------ */
+.card {
+
+  background: #69998f47;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
+  position: relative;
+  width: var(--card-width);
+
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--card-hover-shadow);
+}
+
+/* Image Wrapper */
+.position-relative {
+
+  position: relative;
+  width: var(--card-width);
+  height: var(--card-image-height);
+  overflow: hidden;
+  
+}
+
+.card img {
+  width: var(--card-width);
+  height: var(--card-image-height);
+  object-fit: cover;
+  transition: transform var(--transition-duration) ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+/* Discount Badge */
+.discount-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: var(--primary-color);
+  color: #7a6a6a;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.9em;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Card Body */
+.card .card-body {
+  padding: 15px;
+}
+
+.card .card-title {
+  font-size: 1.25em;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.card .card-text {
+  font-size: 1em;
+  color: var(--secondary-color);
+  margin-bottom: 12px;
+}
+
+/* Search Bar */
+#search-bar {
+  
+  padding: 10px;
+  margin: 30px 0;
+  border: 2px solid #9e9e97;
+  background-color: #555a5ac4;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #f0f3f4 ;
+  ;
+
+}
+
+
+
+
+/* ------------------ Responsive Adjustments ------------------ */
+@media screen and (max-width: 768px) {
+  .menu-items {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .col-md-4, .card {
+      width: 90%;
+  }
+
+}
+
+
+/*   cart side bar */
+
+/* General Sidebar Styling */
+#cart-sidebar {
+  background-image: url(../img/brown-wooden-textured-flooring-background.jpg);
+  background-size: cover;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 285px;
+  height: 100%;
+  background-color:linear-gradient(to right, #431e57bb, #4a4949);
+  
+  padding: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+  border-color: #8d8d8b;
+  
+  border-radius: 10px;
+  border-width: 3px;
+  border-style: solid;
+}
+
+/* Styling the customer selection label and dropdown */
+#customer-select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+
+.form-label {
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.text-warning {
+  color: #f39c12;
+}
+
+/* Cart items section */
+#cart-details {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.cart-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Button Styling */
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+#checkout-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+#checkout-btn:hover:enabled {
+  background-color: #218838;
+}
+
+#generate-bill-btn {
+  background-color: #17a2b8;
+  color: white;
+}
+
+#generate-bill-btn:hover:enabled {
+  background-color: #138496;
+}
+
+#clear-cart-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+#clear-cart-btn:hover:enabled {
+  background-color: #c82333;
+}
+
+#close-cart-btn {
+  background-color: #6c757d;
+  color: white;
+}
+
+#close-cart-btn:hover:enabled {
+  background-color: #5a6268;
+}
+
+
+
+
+
+
+
+
+

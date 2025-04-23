@@ -1,0 +1,159 @@
+
+body {
+    background: linear-gradient(to right, #000000bb, #0b0101);
+
+    color: white;
+    margin-left: 260px;
+}
+
+.brand-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #FFC107;
+}
+
+.brand-description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.website-link {
+    font-size: 1rem;
+    color: #bbb;
+}
+
+.sidebar {
+    width: 250px;
+    position: fixed;
+    height: 100vh;
+    background-image: url(../img/navbar\ black.png);
+    background-size: cover;
+    
+    padding: 20px;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+}
+
+.sidebar .nav-link {
+    padding: 20px;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+    background: #FFC107;
+    color: black;
+    border-radius: 5px;
+}
+
+
+
+
+#nav-icon{
+
+    top:-20px;
+  width: 100px;
+  margin-top: -100px;
+  padding-top:10px ;
+  padding-bottom: 20px;
+
+}
+
+
+.sidebar {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+}
+.nav.flex-column {
+width: 100%;
+}
+.modal-dialog-centered {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.sidebar h4 {
+ position: absolute;
+ top: 20px;
+ right:0px;  
+ transform: translateX(-50%); 
+}
+
+
+/* #item-table{
+
+width: 50%;
+border: #FFC107;
+background-color: aqua;
+
+
+border-collapse: collapse;
+margin: 25px 0;
+font-size: 0.9em;
+min-width: 400px;
+
+border-radius: 5px 5px 0 0;
+overflow: hidden;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+} */
+
+
+
+
+table {
+    width: 1100px !important;
+    border-collapse: collapse;
+   margin-left:60px ;
+   margin-right: 40px;
+   padding: 30px;
+   border-color: #aaaa03 !important;
+    
+}
+
+
+th {
+    background-color: #f0eca7eb !important;
+    color: #000000 !important;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Table body row styling */
+td {
+    background-color: #feffff !important;
+    color: #3f3b3b !important;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Alternating row colors for better readability */
+tbody tr:nth-child(even) {
+    background-color: #6c757d;
+}
+
+tbody tr:hover {
+    background-color: #212529;
+    cursor: pointer;
+}
+
+/* Actions column styling */
+td button {
+    margin-right: 5px;
+}
+
+/* Responsive table styling */
+@media (max-width: 768px) {
+    th, td {
+        padding: 8px;
+    }
+    table {
+        font-size: 14px;
+    }
+}
