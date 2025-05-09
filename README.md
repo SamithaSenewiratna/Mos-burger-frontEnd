@@ -38,14 +38,20 @@ This project reflects real-world challenges in the food and beverage industry an
 
 ## 🖼️ Screenshots
 
-### 🏠 Home Page
-![Home Page](screenshots/home.png)
+### 🏠 Login Page
+![login Page](screenshots/mos_burger_0.png)
 
-### 🍔 Menu Page
-![Menu Page](screenshots/menu.png)
+### 🍔 Home Page
+![Home Page](screenshots/mos_burger_1.png)
 
 ### 🛒 Order Page
-![Order Page](screenshots/order.png)
+![Order Page](screenshots/mos_burger_2.png)
+
+### 🛒 Item Page
+![Item Page](screenshots/mos_burger_3.png)
+
+### 🛒 Customer Page
+![Customer Page](screenshots/mos_burger_4.png)
 
 
 ---
